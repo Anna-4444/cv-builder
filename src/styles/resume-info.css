@@ -1,0 +1,115 @@
+.resumeBuilder h1 {
+    color: #eaebed;
+    text-align: center;
+    font-size: 4rem;
+}
+
+.resumeBuilder h2 {
+    color: black;
+    font-size: 2rem;
+    margin: 1rem;
+    text-align: center;
+}
+
+.resumeBuilder header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.resumeBuilder > div {
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px 3px black;
+    background-color: #eaebed;
+}
+
+.resumeBuilder form {
+    display: flex;
+    flex-direction: column;
+}
+
+.resumeBuilder input,
+.resumeBuilder textarea {
+    margin-bottom: .75rem;
+    padding: .5rem;
+    background-color: #a3bac3;
+    border: none;
+    border-radius: 3px;
+}
+
+button {
+    background-color: #007090;
+    color: #eaebed;
+    border: none;
+    border-radius: 5px;
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.save {
+    background-color: rgb(15, 83, 15);
+}
+
+.delete {
+    background-color: rgb(100, 17, 17);
+}
+
+.add {
+    margin: 0 auto;
+}
+
+.viewResume {
+    background-color: #eaebed;
+    color: #007090;
+    font-size: 1rem;
+}
+
+.buttonDiv {
+    display: flex;
+    justify-content: space-between;
+}
+
+.eduForm,
+.workForm,
+.perCard,
+.eduCard,
+.workCard {
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px 3px black;
+}
+
+.perCard,
+.eduCard,
+.workCard {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+
+    .resumeBuilder header {
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 1200px) {
+    
+    .buttonDiv {
+        justify-content: space-around;
+    }
+
+    .viewResume {
+        position: fixed;
+        top: 3rem;
+        right: 3rem;
+    }
+
+}

@@ -1,9 +1,12 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import './styles/App.css'
-import { PersonalInfo, ResumePersonalInfo, ResumeProfilePic } from './components/personal-info.jsx';
-import { EducationInfo, ResumeEducationInfo } from './components/education.jsx'
-import { WorkInfo, ResumeWorkInfo } from './components/work.jsx'
+import './styles/resume-info.css'
+import { CSSTransition } from 'react-transition-group'
+import { PersonalInfo } from './components/personal-info.jsx';
+import { EducationInfo } from './components/education-info.jsx'
+import { WorkInfo } from './components/work-info.jsx'
 import { Button } from './components/helpers.jsx'
+import { ResumePersonalInfo, ResumeProfilePic, ResumeWorkInfo, ResumeEducationInfo } from './components/resume-render.jsx'
 
 
 function App() {
@@ -68,28 +71,33 @@ function App() {
   const [viewResume, setViewResume] = useState(false)
 
   function handleViewResume() {
-    setViewResume(true)
+    setViewResume(!viewResume);
   }
-  function handleEditResume() {
-    setViewResume(false)
-  }
+  const nodeRef = useRef(null);
   
   return (
     <>
-    <div className={viewResume ? 'resumeBuilder inactive' : 'resumeBuilder'}>
-      <h1>Resume Builder</h1>
+    <CSSTransition nodeRef={nodeRef} in={!viewResume} timeout={500} classNames='fade' unmountOnExit>
+    <div ref={nodeRef} className='resumeBuilder'>
+      <header>
+        <h1>Resume Builder</h1>
+        <Button className={'viewResume'} handleClick={handleViewResume} text={'View Resume'}/>
+      </header>
       <PersonalInfo person={person} setPerson={setPerson} setProfilePic={setProfilePic}/>
       <EducationInfo education={education} setEducation={setEducation} />
       <WorkInfo work={work} setWork={setWork} />
-      <Button handleClick={handleViewResume} text={'View Resume'}/>
+      
     </div>
-    <div className={viewResume ? 'resumeRender active' : 'resumeRender'}>
+    </CSSTransition>
+    <CSSTransition nodeRef={nodeRef} in={viewResume} timeout={500} classNames='fade' unmountOnExit>
+    <div ref={nodeRef} className='resumeRender'>
       <ResumeProfilePic profilePic={profilePic} />
       <ResumePersonalInfo person={person} />
       <ResumeWorkInfo work={work}/>
       <ResumeEducationInfo education={education} />
-      <Button handleClick={handleEditResume} text={'Edit Resume'}/>
+      <Button handleClick={handleViewResume} text={'Edit Resume'}/>
     </div>
+    </CSSTransition>
     </>
   );
 }
