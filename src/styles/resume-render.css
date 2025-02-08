@@ -1,0 +1,152 @@
+.resumeRender header {
+    width: min(80vw, 800px);
+    margin: 4rem auto;
+}
+
+.editResume {
+    background-color: #eaebed;
+    color: #007090;
+    font-size: 1rem;
+}
+
+.resumeRender h1 {
+    color: black;
+}
+
+.resumeRender h2 { 
+    border-bottom: 1px solid black;
+}
+
+.grid {
+    height: 1056px;
+    width: 816px;
+    padding: 96px;
+    margin: 4rem auto;
+    background-color: white;
+    /* display: grid;
+    grid-template-columns: 250px auto;
+    grid-template-rows: 250px auto auto auto auto;
+    grid-template-areas: 
+        "pic       name"
+        "contact   objective"
+        "contact   experience"
+        ".         experience"
+        ".         education";
+    column-gap: 3rem;
+    row-gap: 2rem; */
+}
+
+.top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.profilePic {
+    /* grid-area: pic; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    /* padding: 2rem; */
+}
+
+.nameTitle {
+    /* grid-area: name; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    width: 55%;
+    text-align: right;
+    border-right: 10px solid black; 
+    padding-right: 3rem; 
+}
+  
+.contact {
+    /* grid-area: contact; */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 30%;
+}
+
+.contactInfo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.objective {
+    /* grid-area: objective; */
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    width: 60%;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.skillProject {
+    width: 30%;
+}
+
+.expEdu {
+    width: 60%;
+}
+
+.experience {
+    /* grid-area: experience; */
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.edu,
+.job {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    /* margin-left: 1rem; */
+   
+}
+
+.degreeDate,
+.titleDate {
+    display: flex;
+    justify-content: space-between;
+}
+
+.insLo,
+.coLoc {
+    display: flex;
+    gap: 1rem;
+}
+
+.respons,
+.misc {
+    /* margin-left: 1rem; */
+}
+
+.education {
+    /* grid-area: education; */
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+ 
+@media print {
+    @page {
+      size: A4 portrait;
+    }
+    .editResume {
+        display: none;
+    }
+}
+
+

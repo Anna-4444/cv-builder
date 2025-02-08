@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 import './styles/App.css'
 import './styles/resume-info.css'
+import './styles/resume-render.css'
 import { CSSTransition } from 'react-transition-group'
 import { PersonalInfo } from './components/personal-info.jsx';
 import { EducationInfo } from './components/education-info.jsx'
@@ -12,8 +13,8 @@ import { ResumePersonalInfo, ResumeProfilePic, ResumeWorkInfo, ResumeEducationIn
 function App() {
 
   const [person, setPerson] = useState({
-    firstName: "Jane",
-    lastName: "Doe",
+    firstName: "Mary-Jane",
+    lastName: "Smith",
     email: "example@example.com",
     phone: "123-456-5555",
     location: "City, State",
@@ -81,21 +82,33 @@ function App() {
     <div ref={nodeRef} className='resumeBuilder'>
       <header>
         <h1>Resume Builder</h1>
-        <Button className={'viewResume'} handleClick={handleViewResume} text={'View Resume'}/>
+        <Button className={'viewResume'} handleClick={handleViewResume} text={'View Resume'} />
       </header>
       <PersonalInfo person={person} setPerson={setPerson} setProfilePic={setProfilePic}/>
       <EducationInfo education={education} setEducation={setEducation} />
       <WorkInfo work={work} setWork={setWork} />
-      
     </div>
     </CSSTransition>
     <CSSTransition nodeRef={nodeRef} in={viewResume} timeout={500} classNames='fade' unmountOnExit>
     <div ref={nodeRef} className='resumeRender'>
-      <ResumeProfilePic profilePic={profilePic} />
-      <ResumePersonalInfo person={person} />
-      <ResumeWorkInfo work={work}/>
-      <ResumeEducationInfo education={education} />
-      <Button handleClick={handleViewResume} text={'Edit Resume'}/>
+      <header>
+        <h1>Resume Render</h1>
+        <Button className={'editResume'} handleClick={handleViewResume} text={'Edit Resume'}/>
+      </header>
+      <div className='grid'>
+        <div className="top">
+          <ResumeProfilePic profilePic={profilePic} />
+          <ResumePersonalInfo person={person} />
+        </div>
+        <div className="bottom">
+          <div className="skillProject"></div>
+          <div className="expEdu">
+            <ResumeWorkInfo work={work}/>
+            <ResumeEducationInfo education={education} />
+          </div>
+        </div>
+        
+      </div>
     </div>
     </CSSTransition>
     </>
