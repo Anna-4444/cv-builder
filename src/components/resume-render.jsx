@@ -56,7 +56,7 @@ export function ResumeWorkInfo({ work }) {
         <div className="job" key={index}>
             <div className="titleDate">
                 <h3>{job.jobTitle}</h3>
-                <div>{job.startDate} - {job.endDate}</div>
+                <div className="dates">{job.startDate} - {job.endDate}</div>
             </div>
             <div className="coLoc">
                 <div>{job.company}</div>
@@ -78,7 +78,7 @@ export function ResumeEducationInfo({ education }) {
         <div className="edu" key={index}>
             <div className="degreeDate">
                 <h3>{edu.degree}</h3>
-                <div>{edu.startDate} - {edu.endDate}</div>
+                <div className="dates">{edu.startDate} - {edu.endDate}</div>
             </div>
             <div className="insLo">
                 <div>{edu.institution}</div>

@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import './styles/App.css'
-import './styles/resume-info.css'
+import './styles/resume-builder.css'
 import './styles/resume-render.css'
 import { CSSTransition } from 'react-transition-group'
 import { PersonalInfo } from './components/personal-info.jsx';
@@ -19,9 +19,9 @@ function App() {
     phone: "123-456-5555",
     location: "City, State",
     occupation: "Web Developer",
-    linkedIn: "https://linkedin.com/username",
-    portfolio: "https://github.com/username",
-    objective: "A statement about your career goals and how your skills and education can help you achieve them.",
+    linkedIn: "linkedin.com/name",
+    portfolio: "github.com/username",
+    objective: "A statement about your career goals and how your skills and education can help you achieve them. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     open: false,
   });
 
@@ -32,8 +32,8 @@ function App() {
       jobTitle: "Front End Web Dev",
       company: "Startup",
       location: "City, State",
-      startDate: "2010-01-01",
-      endDate: "2025-02-04",
+      startDate: "May, 2022",
+      endDate: "present",
       responsibilities: "Used HTML, CSS and Javascript to build responsive, user-friendly interfaces.  Collaborated with designers to bring wireframes and mockups to life, with optimized site performance.",
       open: false,
     },
@@ -41,8 +41,8 @@ function App() {
       jobTitle: "Internship",
       company: "Big Company",
       location: "City, State",
-      startDate: "2010-01-01",
-      endDate: "2010-01-01",
+      startDate: "May, 2021",
+      endDate: "August 2021",
       responsibilities: "Used HTML, CSS and Javascript to build responsive, user-friendly interfaces.  Collaborated with designers to bring wireframes and mockups to life, with optimized site performance.",
       open: false,
     }
@@ -53,17 +53,8 @@ function App() {
       degree: "BS Computer Science",
       institution: "University of State",
       location: "City, State",
-      startDate: "2025-02-04",
-      endDate: "2025-08-05",
-      misc: "GPA 3.8",
-      open: false,
-    },
-    {
-      degree: "BS Computer Science",
-      institution: "University of State",
-      location: "City, State",
-      startDate: "2025-02-04",
-      endDate: "2025-02-04",
+      startDate: "August, 2018",
+      endDate: "May, 2022",
       misc: "GPA 3.8",
       open: false,
     }
@@ -95,7 +86,7 @@ function App() {
         <h1>Resume Render</h1>
         <Button className={'editResume'} handleClick={handleViewResume} text={'Edit Resume'}/>
       </header>
-      <div className='grid'>
+      <div className='resumePage'>
         <div className="top">
           <ResumeProfilePic profilePic={profilePic} />
           <ResumePersonalInfo person={person} />

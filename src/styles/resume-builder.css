@@ -1,21 +1,3 @@
-header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-}
-
-h1 {
-    color: #eaebed;
-    font-size: 4rem;
-}
-
-h2 {
-    color: black;
-    font-size: 2rem;
-}
-
 .resumeBuilder h2 {
     text-align: center;
     margin: 1rem 0;
@@ -32,8 +14,8 @@ h2 {
 .resumeBuilder > div {
     padding: 1rem;
     border-radius: 10px;
-    box-shadow: 3px 3px 3px 3px black;
-    background-color: #eaebed;
+    box-shadow: 3px 3px 3px 3px var(--box-shadow-color);
+    background-color: var(--builder-background-color);
 }
 
 .resumeBuilder form {
@@ -45,14 +27,14 @@ h2 {
 .resumeBuilder textarea {
     margin-bottom: .75rem;
     padding: .5rem;
-    background-color: #a3bac3;
+    background-color: var(--builder-secondary-color);
     border: none;
     border-radius: 3px;
 }
 
 button {
-    background-color: #007090;
-    color: #eaebed;
+    background-color: var(--builder-primary-color);
+    color: var(--builder-background-color);
     border: none;
     border-radius: 5px;
     padding: .5rem;
@@ -62,21 +44,23 @@ button {
 }
 
 .save {
-    background-color: rgb(15, 83, 15);
+    background-color: var(--save-button-color);
 }
 
 .delete {
-    background-color: rgb(100, 17, 17);
+    background-color: var(--delete-button-color);
 }
 
 .add {
     margin: 0 auto;
 }
 
+.editResume,
 .viewResume {
-    background-color: #eaebed;
-    color: #007090;
+    background-color: var(--builder-background-color);
+    color: var(--builder-primary-color);
     font-size: 1rem;
+    box-shadow: 2px 2px 2px var(--builder-primary-color);
 }
 
 .buttonDiv {
@@ -92,7 +76,7 @@ button {
     padding: 1rem;
     margin: 1rem;
     border-radius: 10px;
-    box-shadow: 3px 3px 3px 3px black;
+    box-shadow: 3px 3px 3px 3px var(--box-shadow-color);
 }
 
 .eduCard,
@@ -100,26 +84,13 @@ button {
 .perCard {
     display: flex;
     justify-content: space-between;
-    text-align: center;
 }
+
 
 @media (min-width: 768px) {
-
-    header {
-        justify-content: space-between;
-    }
-}
-
-@media (min-width: 1200px) {
     
     .buttonDiv {
         justify-content: space-around;
-    }
-
-    .viewResume {
-        position: fixed;
-        top: 3rem;
-        right: 3rem;
     }
 
 }

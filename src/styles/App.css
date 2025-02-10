@@ -2,12 +2,44 @@
     margin: 0;
 } 
 
+:root {
+   --primary-color: #cd853f;
+   --secondary-color: #2c446f; 
+   --background-color: #b2d1c9;
+   --builder-primary-color: #007090;
+   --builder-secondary-color: #a3bac3;
+   --builder-background-color: #eaebed;
+   --save-button-color: rgb(15, 83, 15);
+   --delete-button-color: rgb(100, 17, 17);
+   --box-shadow-color: rgb(57, 57, 57);
+}
+
 html {
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
 }
 
 body {
-    background-color: #006989;
+    background-color: var(--background-color);
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+h1 {
+    color: var(--builder-primary-color);
+    font-size: 4rem;
+    text-align: center;
+}
+
+h2 {
+    color: black;
+    font-size: 2rem;
 }
 
 /* fade classes are for the <CSSTransition> between 
@@ -27,4 +59,12 @@ the resume builder and resume render */
     opacity: 0;
     transition: opacity 500ms;
 }
+
+@media (min-width: 768px) {
+
+    header {
+        justify-content: space-between;
+    }
+}
+
 
